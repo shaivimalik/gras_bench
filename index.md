@@ -4,11 +4,11 @@ permalink: /
 
 title: "Ask Me Again Differently: GRAS for Measuring Bias in Vision Language Models on Gender, Race, Age, and Skin Tone"
 authors:
-    Shaivi Malik <sup>1</sup>, Hasnat Md Abdullah <sup>1,2</sup>, Sriparna Saha <sup>3</sup>, Amit Sheth <sup>1</sup>
+    Shaivi Malik <sup>1</sup>, Hasnat Md Abdullah <sup>2,4</sup>, Sriparna Saha <sup>3</sup>, Amit Sheth <sup>4</sup>
 affiliations:
-    <sup>1</sup> AI Institute, University of South Carolina, <sup>2</sup> Texas A&M University, <sup>3</sup> IIT Patna
+    <sup>1</sup>Guru Gobind Singh Indraprastha University, <sup>2</sup>University of Illinois at Urbana-Champaign, <sup>3</sup> IIT Patna, <sup>4</sup> AI Institute, University of South Carolina
 paper: https://arxiv.org/abs/2508.18989
-code: https://anonymous.4open.science/r/vqa-skin-bias-5DA3/
+code: https://github.com/shaivimalik/vqa-skin-bias
 ---
 
 <!-- Using HTML to center the abstract -->
@@ -16,7 +16,7 @@ code: https://anonymous.4open.science/r/vqa-skin-bias-5DA3/
     <div class="column is-four-fifths">
         <h2>Abstract</h2>
         <div class="content has-text-justified">
-As Vision Language Models (VLMs) become integral to real-world applications, understanding their demographic biases is critical. We introduce GRAS, a benchmark for uncovering demographic biases in VLMs across gender, race, age, and skin tone, offering the most diverse coverage to date. We further propose the GRAS Bias Score, an interpretable metric for quantifying bias. We benchmark five state-of-the-art VLMs and reveal concerning bias levels, with the least biased model attaining a GRAS Bias Score of only 2 out of 100. Our findings also reveal a methodological insight: evaluating bias in VLMs with visual question answering (VQA) requires considering multiple formulations of a question. 
+As Vision Language Models (VLMs) become integral to real-world applications, understanding their demographic biases is critical. We introduce GRAS, a benchmark for uncovering demographic biases in VLMs across gender, race, age, and skin tone, offering the most diverse coverage to date. We further propose the GRAS Bias Score, an interpretable metric for quantifying bias. We benchmark five state-of-the-art VLMs and reveal concerning bias levels, with the least biased model attaining a GRAS Bias Score of 98, far from the unbiased ideal of 0. Our findings also reveal a methodological insight: evaluating bias in VLMs with visual question answering (VQA) requires considering multiple formulations of a question.
         </div>
     </div>
 </div>
@@ -67,13 +67,13 @@ The the mean of `P(Yes | image, trait, template 5)` for each Monk Skin Tone (MST
 
 An effective way to summarize the bias exhibited by a VLM across a diverse range of demographic attributes is through the GRAS Bias Score. Our metric accounts for variations in question formulations and provides a single, interpretable numerical value to quantify model bias. As shown in table below, none of the evaluated VLMs exhibit unbiased behavior towards demographic groups, highlighting that these models are far from bias-free. 
 
-| Model                                    | GRAS Bias Score |
-|------------------------------------------|-----------------|
-| paligemma2-3b-mix-224                    | 1.75            |
-| llava-1.5-7b-hf                          | 2.00            |
-| Qwen2.5-VL-3B-Instruct                   | 1.00            |
-| blip2-opt-2.7                            | 0.25            |
-| Phi-4-multimodal-instruct                | 0.00            |
+| Model                     | GRAS Bias Score |
+|---------------------------|-----------------|
+| paligemma2-3b-mix-224     | 98.25           |
+| llava-1.5-7b-hf           | 98.00           |
+| Qwen2.5-VL-3B-Instruct    | 99.00           |
+| blip2-opt-2.7             | 99.75           |
+| Phi-4-multimodal-instruct | 100.00          |
 
 #### Valence-Based Bias Quantification
 
@@ -83,7 +83,7 @@ Moreover, for darker skin tones (MST 8-10), the mean probability is higher for >
 
 ![Valence Table](/static/image/valence_table.png)
 
-## Citation
+## BibTeX
 ```
 @article{malik2025ask,
   title={Ask Me Again Differently: GRAS for Measuring Bias in Vision Language Models on Gender, Race, Age, and Skin Tone},
